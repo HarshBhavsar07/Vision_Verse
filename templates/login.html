@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>VisionVerse | Access</title>
+</head>
+<body class="auth-page">
+
+<div class="auth-wrapper">
+    <div class="glass-card auth-box">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <button id="lTab" class="tab-btn active" onclick="switchTab('login')">Login</button>
+            <button id="sTab" class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+        </div>
+        
+        <div id="login-form">
+            <input type="tel" id="l_phone" placeholder="Enter Contact Number" class="auth-input" required>
+            <input type="password" id="l_pass" placeholder="Enter Password" class="auth-input" required>
+            <button onclick="authAction('login')" class="btn primary full-width" style="margin-top: 10px;">Login</button>
+        </div>
+
+        <div id="signup-form" style="display:none;">
+            <input type="text" id="s_name" placeholder="Full Name" class="auth-input" required>
+            <input type="tel" id="s_phone" placeholder="Mobile Number" class="auth-input" required>
+            <input type="email" id="s_email" placeholder="Email Address" class="auth-input" required>
+            <input type="password" id="s_pass" placeholder="Password" class="auth-input" required>
+            <input type="password" id="s_cpass" placeholder="Confirm Password" class="auth-input" required>
+            
+            <p id="password-error" style="color:#ff4757; font-size:13px; margin:5px 0; display:none; text-align:center;">⚠️ Passwords do not match!</p>
+            
+            <button onclick="authAction('signup')" class="btn primary full-width" style="margin-top: 10px;">Sign Up</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionVerse | AI Visual Intelligence</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Vision<span>Verse</span></div>
+  <ul class="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#" onclick="toggleProfile()">My Profile</a></li>
+    <li><a href="#upload" class="nav-btn">Try Now</a></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero">
+  <div class="hero-left">
+    <span class="badge">✨ Powered by Gemini 3.5 Flash</span>
+    <h1>Understand Images <br><span class="highlight">Beyond Pixels</span></h1>
+    <p>Upload any image and receive real-time captions, descriptions, scene analysis, mood detection, Instagram captions, and hashtags powered exclusively by Google Gemini Vision AI.</p>
+    <div class="buttons">
+      <a href="#upload" class="btn primary">Upload Image</a>
+      <a href="#features" class="btn secondary">Explore Features</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="glass-card float-anim">
+      <h3>AI Results Preview</h3>
+      <div class="result-box">
+        <h4>🖼️ Caption</h4>
+        <p>A scenic mountain road beneath dramatic clouds.</p>
+      </div>
+      <div class="result-box">
+        <h4>😊 Mood</h4>
+        <p>Peaceful • Adventurous</p>
+      </div>
+      <div class="result-box">
+        <h4>📱 Instagram</h4>
+        <p>Some roads are worth getting lost on 🌿 #Wanderlust</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="section-header">
+    <h2>Supercharged Features</h2>
+    <p>Everything you need to extract intelligence from visual data.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>AI Caption</h3>
+    </div>
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Deep Description</h3>
+    </div>
+    <div class="card">
+      <div class="icon">😊</div>
+      <h3>Mood Analysis</h3>
+    </div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Scene Detection</h3>
+    </div>
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Social Ready</h3>
+    </div>
+    <div class="card">
+      <div class="icon">#️⃣</div>
+      <h3>Smart Hashtags</h3>
+    </div>
+  </div>
+</section>
+
+<section id="upload">
+  <div class="section-header">
+    <h2>Initiate Scan</h2>
+    <p>Select an image from your device to begin AI analysis.</p>
+  </div>
+  
+  <div class="upload-wrapper glass-card">
+    <label for="imageInput" class="custom-file-upload">
+      <div class="upload-icon">📂</div>
+      <span>Click here to browse your image</span>
+    </label>
+    <input type="file" id="imageInput" accept="image/*">
+    
+    <div id="previewContainer">
+      <img id="preview" alt="Preview">
+    </div>
+    <button id="analyzeBtn" class="btn primary full-width">Analyze Intelligence 🚀</button>
+  </div>
+</section>
+
+<section id="results">
+  <div id="output"></div>
+</section>
+
+<div id="profileBox" class="glass-card" style="display:none; position:fixed; top:80px; right:20px; width:300px; z-index:1000; background:#1a1a2e; padding:20px; border: 1px solid #6C63FF;">
+    <h3 style="margin-bottom:15px; color:#fff;">User Profile</h3>
+    <p style="margin-bottom:10px; color:#fff;">Name: <span id="p_name" style="color:#4CC9F0;">...</span></p>
+    <p style="margin-bottom:10px; color:#fff;">Email: <span id="p_email" style="color:#4CC9F0;">...</span></p>
+    <p style="margin-bottom:10px; color:#fff;">Contact: <span id="p_phone" style="color:#4CC9F0;">...</span></p>
+    <div style="margin-top:20px;">
+        <a href="/logout" class="btn primary" style="width:100%; text-align:center; display:block;">Logout</a>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
