@@ -124,22 +124,6 @@ http://127.0.0.1:5000
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-
-_Add screenshot here_
-
-### Upload Image
-
-_Add screenshot here_
-
-### AI Analysis Result
-
-_Add screenshot here_
-
----
-
 ## 🎯 Future Improvements
 
 - Voice-based image description
